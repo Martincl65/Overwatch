@@ -1,0 +1,146 @@
+<div class="moyenne">
+    <div class="rank">
+        <h2>Compétitive</h2>
+        <b>Rang : {{ stats['eu']['stats']['competitive']['overall_stats']['comprank'] }}</b><img src="{{ api['competitive']['rank_img'] }}" style="width: 10%">
+    </div>
+</div>
+{% if stats['eu']['stats']['quickplay']['average_stats']|length %}
+    <div class="moyenne">
+        <div class="normale">
+            <h2><b>Jeu</b></h2></br></br></br>
+            <p>Temps de jeu : {{ stats['eu']['stats']['quickplay']['game_stats']['time_played'] }}h</p>
+            <p>Temps objectif : </p>
+            <p>Parties gagnées : {{ stats['eu']['stats']['quickplay']['game_stats']['games_won'] }}</p>
+        </div>
+        <div class="normale">
+            <h2><b>Moyenne</b></h2>
+            <p>Eliminations : {{ stats['eu']['stats']['quickplay']['overall_stats']['comprank'] }}</p>
+            <p>Coup de grâce : </p>
+            <p>Dégats infligés : </p>
+            <p>Soins prodigués : </p>
+            <p>Victimes sur objectif : </p>
+            <p>Victimes simultanées : </p>
+            <p>Victimes en solo : </p>
+            <p>Temps passé à déchirer :</p>
+        </div>
+        <div class="normale">
+            <h2><b>Meilleur ( en une partie )</b></h2>
+            <p>Eliminations : </p>
+            <p>Coup de grâce : </p>
+            <p>Dégats infligés : </p>
+            <p>Soins prodigués : </p>
+            <p>Victimes sur objectif : </p>
+            <p>Victimes simultanées : </p>
+            <p>Victimes en solo : </p>
+            <p>Temps passé à déchirer :</p>
+        </div>
+    </div>
+
+    <div class="moyenne">
+        <div class="medaille">
+            <h2><b>Combat</b></h2>
+            <p>Eliminations : </p>
+            <p>Morts : </p>
+            <p>Coups de grâce : 10</p>
+            <p>Victimes solo : </p>
+            <p>Victimes simultanées : </p>
+            <p>Victimes en solo : </p>
+            <p>Victimes sur objectif : </p>
+        </div>
+        <div class="medaille">
+            <h2>Medailles</h2></br>
+            <p>Médailles totales : {{ stats['eu']['stats']['quickplay']['game_stats']['medals'] }}</p>
+            <p>Médailles d'or : {{ stats['eu']['stats']['quickplay']['game_stats']['medals_gold'] }}</p>
+            <p>Médailles d'argent : {{ stats['eu']['stats']['quickplay']['game_stats']['medals_silver'] }}</p>
+            <p>Médailles de bronze : {{ stats['eu']['stats']['quickplay']['game_stats']['medals_bronze'] }}</p>
+        </div>
+        <div class="medaille">
+            <h2>Medailles</h2></br>
+            <p>Médailles totales : {{ stats['eu']['stats']['competitive']['game_stats']['medals'] }}</p>
+            <p>Médailles d'or : {{ stats['eu']['stats']['competitive']['game_stats']['medals_gold'] }}</p>
+            <p>Médailles d'argent : {{ stats['eu']['stats']['competitive']['game_stats']['medals_silver'] }}</p>
+            <p>Médailles de bronze : {{ stats['eu']['stats']['competitive']['game_stats']['medals_bronze'] }}</p>
+        </div>
+    </div>
+
+    <div class="moyenne">
+        <div class="medaille">
+            <h2>Medailles</h2></br>
+            <p>Médailles totales : {{ stats['eu']['stats']['quickplay']['game_stats']['medals'] }}</p>
+            <p>Médailles d'or : {{ stats['eu']['stats']['quickplay']['game_stats']['medals_gold'] }}</p>
+            <p>Médailles d'argent : {{ stats['eu']['stats']['quickplay']['game_stats']['medals_silver'] }}</p>
+            <p>Médailles de bronze : {{ stats['eu']['stats']['quickplay']['game_stats']['medals_bronze'] }}</p>
+        </div>
+        <div class="medaille">
+            <h2>Medailles</h2></br>
+            <p>Médailles totales : {{ stats['eu']['stats']['competitive']['game_stats']['medals'] }}</p>
+            <p>Médailles d'or : {{ stats['eu']['stats']['competitive']['game_stats']['medals_gold'] }}</p>
+            <p>Médailles d'argent : {{ stats['eu']['stats']['competitive']['game_stats']['medals_silver'] }}</p>
+            <p>Médailles de bronze : {{ stats['eu']['stats']['competitive']['game_stats']['medals_bronze'] }}</p>
+        </div>
+    </div>
+{% else %}
+    <div class="moyenne">
+        <div class="normale">
+            <h2><b>Moyenne</b></h2>
+            <p>Eliminations : {{ stats['eu']['stats']['quickplay']['overall_stats']['comprank'] }}</p>
+            <p>Coup de grâce : </p>
+            <p>Dégats infligés : </p>
+            <p>Soins prodigués : </p>
+            <p>Victimes sur objectif : </p>
+            <p>Eliminations simultanées : </p>
+            <p>Victimes en solo : </p>
+            <p>Temps passé à déchirer :</p>
+        </div>
+        <div class="normale">
+            <h2><b>Meilleur ( en une partie )</b></h2>
+            <p>Eliminations : </p>
+            <p>Coup de grâce : </p>
+            <p>Dégats infligés : </p>
+            <p>Soins prodigués : </p>
+            <p>Victimes sur objectif : </p>
+            <p>Eliminations simultanées : </p>
+            <p>Victimes en solo : </p>
+            <p>Temps passé à déchirer :</p>
+        </div>
+        <div class="normale">
+            <h2><b>Combat</b></h2>
+            <p>Eliminations : </p>
+            <p>Coup de grâce : </p>
+            <p>Dégats infligés : </p>
+            <p>Soins prodigués : </p>
+            <p>Victimes sur objectif : </p>
+            <p>Eliminations simultanées : </p>
+            <p>Victimes en solo : </p>
+            <p>Temps passé à déchirer :</p>
+        </div>
+    </div>
+
+    <div class="moyenne">
+        <div class="medaille">
+            <h2><b>Jeu</b></h2>
+            <p>Temps de jeu : {{ stats['eu']['stats']['quickplay']['game_stats']['time_played'] }}h</p>
+            <p>Temps objectif : </p>
+            <p>Parties gagnées : {{ stats['eu']['stats']['quickplay']['game_stats']['games_won'] }}</p>
+            <p>Morts : </p>
+        </div>
+        <div class="medaille">
+            <h2>Medailles</h2>
+            <p>Médailles totales : {{ stats['eu']['stats']['competitive']['game_stats']['medals'] }}</p>
+            <p>Médailles d'or : {{ stats['eu']['stats']['competitive']['game_stats']['medals_gold'] }}</p>
+            <p>Médailles d'argent : {{ stats['eu']['stats']['competitive']['game_stats']['medals_silver'] }}</p>
+            <p>Médailles de bronze : {{ stats['eu']['stats']['competitive']['game_stats']['medals_bronze'] }}</p>
+        </div>
+        <div class="medaille">
+            <h2>Soutien</h2>
+            <p>Soins prodigués : </p>
+            <p>Soutiens (detection) : </p>
+            <p>TP détruit : </p>
+            <p>Tourelles détruites : </p>
+        </div>
+    </div>
+
+    <div class="moyenne">
+
+    </div>
+{% endif %}

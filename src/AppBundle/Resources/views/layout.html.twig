@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<style>
+body
+{
+    background: url(https://images2.alphacoders.com/704/704062.jpg)no-repeat center fixed;
+    background-size: cover;
+}
+</style>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ asset('style.css') }}" />
+        <script type="text/javascript" src="{{ asset('js/jquery.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('js/jquery-ui.js') }}"></script>
+        <title>Overwatch</title>
+    </head>
+
+    <body>
+        {% block body %}
+
+        {% endblock %}
+
+        {% block javascript %}
+
+        {% endblock %}
+    </body>
+</html>

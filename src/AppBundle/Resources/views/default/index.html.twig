@@ -1,0 +1,93 @@
+{% extends 'AppBundle::layout.html.twig' %}
+
+{% block title %}
+    Page d'accueil - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+<style>
+    .player
+    {
+        width: 256px;
+        height: 256px;
+        background: url({{ api['levelFrame'] }})no-repeat,
+                    url({{ api['star'] }})no-repeat bottom;
+        background-blend-mode: multiply;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .normale
+    {
+        background: url({{ asset('images/moyenne.jpg') }})no-repeat;
+    }
+    .rank
+    {
+        background: url({{ asset('images/ranked.jpg') }})no-repeat;
+    }
+    .medaille
+    {
+        background: url({{ asset('images/medals.jpg') }})no-repeat;
+    }
+    .pseudo
+    {
+        border:5px outset whitesmoke;
+        width: 250px;
+        filter: opacity(90%);
+        border-radius: 15px;
+        box-shadow: 10px 10px 8px black;
+        margin-left: auto;
+        margin-right: auto;
+        background: url({{ asset('images/pseudo.jpg') }})no-repeat;
+    }
+    h2
+    {
+        font-size: 30px;
+        font-style: italic;
+    }
+</style>
+
+    <div class="portrait">
+        <div class="player"></div>
+        <div class="pseudo"><h2 style="text-align: center"><i>{{ api['username'] }}  | {{ api['level'] }}</i></h2></div></br>
+    </div>
+
+    <div id="onglets">
+        <span class="actif">Parties normales</span>
+        <span>Parties compétitives</span>
+    </div></br></br></br>
+
+    <div id="contenu">
+        <div class="item">
+            {% include 'AppBundle:default:normal.html.twig' %}
+        </div>
+        <div class="item">
+            {% include 'AppBundle:default:ranked.html.twig' %}
+        </div>
+    </div>
+
+
+{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+    $(function() {
+        $('#onglets').css('display', 'block');
+        $('#onglets').click(function(event) {
+            var actuel = event.target;
+            if (!/span/i.test(actuel.nodeName) || actuel.className.indexOf('actif') > -1) {
+                alert(actuel.nodeName)
+                return;
+            }
+            $(actuel).addClass('actif').siblings().removeClass('actif');
+            setDisplay();
+        });
+        function setDisplay() {
+            var modeAffichage;
+            $('#onglets span').each(function(rang) {
+                modeAffichage = $(this).hasClass('actif') ? '' : 'none';
+                $('.item').eq(rang).css('display', modeAffichage);
+            });
+        }
+        setDisplay();
+    });
+</script>
+{% endblock %}
