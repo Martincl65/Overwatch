@@ -11,7 +11,7 @@ class OverController extends Controller
 
     public function indexAction($name)
     {
-        /*test*/
+        /*gros test*/
         $curl = curl_init("http://ow-api.herokuapp.com/profile/pc/eu/".$name);
         curl_setopt ( $curl, CURLOPT_RETURNTRANSFER, true );
         curl_setopt ( $curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC );
